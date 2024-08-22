@@ -1,9 +1,10 @@
 import {StyleSheet} from 'react-native';
+import Colors from '../../config/colors';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.backgroundColor,
   },
   header: {
     flexDirection: 'row',
@@ -21,6 +22,7 @@ export const styles = StyleSheet.create({
   time: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: Colors.textColorPrimary,
   },
   section: {
     marginBottom: 24,
@@ -35,9 +37,10 @@ export const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 22,
     fontWeight: 'bold',
+    color: Colors.textColorPrimary,
   },
   viewMore: {
-    color: '#007AFF',
+    color: Colors.primaryColor,
     fontSize: 16,
   },
   podcastCard: {
@@ -45,7 +48,7 @@ export const styles = StyleSheet.create({
     marginLeft: 16,
     borderRadius: 12,
     overflow: 'hidden',
-    backgroundColor: '#F3F4F6',
+    backgroundColor: Colors.backgroundColor,
   },
   podcastImage: {
     width: 180,
@@ -55,13 +58,13 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     top: 8,
     right: 8,
-    backgroundColor: '#10B981',
+    backgroundColor: Colors.primaryColor,
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 4,
   },
   categoryText: {
-    color: '#FFFFFF',
+    color: Colors.buttonTextColor,
     fontSize: 12,
     fontWeight: 'bold',
   },
@@ -70,6 +73,7 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 8,
     marginHorizontal: 8,
+    color: Colors.textColorPrimary,
   },
   podcastDetails: {
     flexDirection: 'row',
@@ -80,7 +84,7 @@ export const styles = StyleSheet.create({
   },
   detailText: {
     fontSize: 12,
-    color: '#6B7280',
+    color: Colors.textColorSecondary,
     marginLeft: 4,
     marginRight: 8,
   },
@@ -102,6 +106,7 @@ export const styles = StyleSheet.create({
   playlistItemTitle: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: Colors.textColorPrimary,
   },
   playlistItemDetails: {
     flexDirection: 'row',
@@ -112,7 +117,7 @@ export const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: '#FF4081',
+    backgroundColor: Colors.primaryColor, // This is an assumption; you can change it as needed
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -122,7 +127,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     height: 50,
     borderTopWidth: 1,
-    borderTopColor: '#E5E7EB',
-    backgroundColor: '#FFFFFF',
+    borderTopColor: Colors.borderColor,
+    backgroundColor: Colors.backgroundColor,
   },
 });

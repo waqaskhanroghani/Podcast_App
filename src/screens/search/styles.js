@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import Colors from '../../config/colors';
 
 export const styles = StyleSheet.create({
   searchHeader: {
@@ -8,11 +9,12 @@ export const styles = StyleSheet.create({
   searchTitle: {
     fontSize: 28,
     fontWeight: 'bold',
+    color: Colors.textColorPrimary,
   },
   searchInputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#F3F4F6',
+    backgroundColor: Colors.backgroundColor,
     borderRadius: 8,
     marginHorizontal: 16,
     marginBottom: 16,
@@ -20,11 +22,13 @@ export const styles = StyleSheet.create({
   },
   searchIcon: {
     marginRight: 8,
+    color: Colors.secondaryColor,
   },
   searchInput: {
     flex: 1,
     height: 40,
     fontSize: 16,
+    color: Colors.textColorPrimary,
   },
   searchResultsContainer: {
     paddingHorizontal: 16,
@@ -46,10 +50,11 @@ export const styles = StyleSheet.create({
   searchResultTitle: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: Colors.textColorPrimary,
   },
   searchResultAuthor: {
     fontSize: 14,
-    color: '#6B7280',
+    color: Colors.textColorSecondary,
     marginTop: 4,
   },
 });

@@ -1,6 +1,9 @@
 export default Object.freeze({
-  primary: '#000000',
-  secondry: '#00f0c5',
-  white: '#ffffff',
-  gray: '#191919',
+  primaryColor: '#00ADB5',
+  secondaryColor: '#6c757d',
+  backgroundColor: '#f5f5f5',
+  textColorPrimary: '#333',
+  textColorSecondary: '#888',
+  borderColor: '#ddd',
+  buttonTextColor: '#fff',
 });
