@@ -22,13 +22,13 @@ export default function App() {
                 headerShown: false,
               }}
             />
-            <Stack.Screen
+            {/* <Stack.Screen
               name={Routes.TASKDETAILS}
               component={Home}
               options={{
                 headerShown: false,
               }}
-            />
+            /> */}
           </Stack.Navigator>
         </PaperProvider>
       </NavigationContainer>

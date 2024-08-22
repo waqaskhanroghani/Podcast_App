@@ -1,12 +1,16 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigation} from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Octicons from 'react-native-vector-icons/Octicons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
 import {CommonActions} from '@react-navigation/native';
 
 import Routes from '../Routes';
 import Home from '../../screens/home';
+import Search from '../../screens/search';
+import Notification from '../../screens/notification';
+import Profile from '../../screens/profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -57,42 +61,55 @@ export default function TabNavigation() {
           }}
         />
       )}>
+      {/* Home screen  */}
       <Tab.Screen
         name={Routes.HOME}
         component={Home}
         options={{
-          tabBarLabel: 'Task',
           tabBarBackground: 'red',
           tabBarStyle: {backgroundColor: 'black'},
           tabBarIcon: ({color, size}) => {
-            return <MaterialIcons name="home" size={size} color={color} />;
+            return <Octicons name="home" size={size} color={color} />;
           },
         }}
       />
-      {/* <Tab.Screen
-        name={Routes.CALENDAR}
-        component={Calendar}
+
+      {/* Search screen */}
+      <Tab.Screen
+        name={Routes.SEARCH}
+        component={Search}
         options={{
-          tabBarLabel: 'Calendar',
           tabBarBackground: 'red',
           tabBarStyle: {backgroundColor: 'black'},
           tabBarIcon: ({color, size}) => {
-            return <Icon name="calendar" size={size} color={color} />;
+            return <Octicons name="search" size={size} color={color} />;
           },
         }}
-      /> */}
-      {/* <Tab.Screen
-        name={Routes.MINE}
-        component={Mine}
+      />
+      {/* notification screen */}
+      <Tab.Screen
+        name={Routes.NOTIFICATION}
+        component={Notification}
         options={{
-          tabBarLabel: 'Mine',
           tabBarBackground: 'red',
           tabBarStyle: {backgroundColor: 'black'},
           tabBarIcon: ({color, size}) => {
-            return <Icon name="face-man-profile" size={size} color={color} />;
+            return <Octicons name="bell" size={size} color={color} />;
           },
         }}
-      /> */}
+      />
+      {/* profile screen */}
+      <Tab.Screen
+        name={Routes.PROFILE}
+        component={Profile}
+        options={{
+          tabBarBackground: 'red',
+          tabBarStyle: {backgroundColor: 'black'},
+          tabBarIcon: ({color, size}) => {
+            return <FontAwesome5 name="award" size={size} color={color} />;
+          },
+        }}
+      />
     </Tab.Navigator>
   );
 }
