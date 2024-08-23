@@ -1,15 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
   TextInput,
   TouchableOpacity,
   SafeAreaView,
+  Alert,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {styles} from './styles';
+import Routes from '../../navigation/Routes';
 
-export default function Login() {
+export default function Login({navigation}) {
+  const [email, setEmail] = useState('waqas@test.com');
+  const [password, setPassword] = useState('password123');
+
+  const handleLogin = () => {
+    // Hardcoded login logic
+    if (email === 'waqas@test.com' && password === 'password123') {
+      // Navigate to another screen after successful login
+      navigation.navigate(Routes.TABNAVIGATOR);
+    } else {
+      Alert.alert('Login Failed', 'Invalid email or password');
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -22,14 +37,19 @@ export default function Login() {
 
         {/* Email Input */}
         <Text style={styles.label}>Email</Text>
-        <TextInput style={styles.input} />
+        <TextInput style={styles.input} value={email} onChangeText={setEmail} />
 
         {/* Password Input */}
         <Text style={styles.label}>Password</Text>
-        <TextInput style={styles.input} secureTextEntry />
+        <TextInput
+          style={styles.input}
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
 
         {/* Login Button */}
-        <TouchableOpacity style={styles.loginButton}>
+        <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
           <Text style={styles.loginButtonText}>Login</Text>
         </TouchableOpacity>
 
