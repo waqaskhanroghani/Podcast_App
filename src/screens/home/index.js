@@ -12,8 +12,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {styles} from './styles';
 import {podcastData} from '../../utils/data';
+import Routes from '../../navigation/Routes';
 
-export default function App() {
+export default function App({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
@@ -40,7 +41,9 @@ export default function App() {
                     source={{uri: podcast.image}}
                     style={styles.podcastImage}
                   />
-                  <TouchableOpacity style={styles.playButtonOverlay}>
+                  <TouchableOpacity
+                    style={styles.playButtonOverlay}
+                    onPress={() => navigation.navigate(Routes.PODCASTDETAILS)}>
                     <Icon name="play" size={24} color="#FFFFFF" />
                   </TouchableOpacity>
                 </View>
@@ -77,7 +80,9 @@ export default function App() {
                   source={{uri: podcast.thumbnail}}
                   style={styles.playlistThumbnail}
                 />
-                <TouchableOpacity style={styles.playButtonOverlay}>
+                <TouchableOpacity
+                  style={styles.playButtonOverlay}
+                  onPress={() => navigation.navigate(Routes.PODCASTDETAILS)}>
                   <Icon name="play" size={24} color="#FFFFFF" />
                 </TouchableOpacity>
               </View>

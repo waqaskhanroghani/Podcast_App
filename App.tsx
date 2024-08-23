@@ -16,7 +16,7 @@ export default function App() {
     <SafeAreaView style={{flex: 1}}>
       <NavigationContainer>
         <PaperProvider>
-          <Stack.Navigator initialRouteName={Routes.PODCASTDETAILS}>
+          <Stack.Navigator initialRouteName={Routes.LOGIN}>
             <Stack.Screen
               name={Routes.TABNAVIGATOR}
               component={TabNavigation}

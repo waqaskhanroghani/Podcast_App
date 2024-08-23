@@ -13,7 +13,11 @@ import {styles} from './styles';
 import {podcastData} from '../../utils/data';
 import Routes from '../../navigation/Routes';
 
-const PodcastDetails = ({navigation}) => {
+import {useNavigation} from '@react-navigation/native';
+
+const PodcastDetails = () => {
+  const navigation = useNavigation();
+
   const renderEpisode = ({item, index}) => (
     <View
       style={[
@@ -45,7 +49,7 @@ const PodcastDetails = ({navigation}) => {
       <View style={styles.header}>
         <TouchableOpacity
           style={styles.backButton}
-          onPress={() => navigation.navigate(Routes.HOME)}>
+          onPress={() => navigation.goBack()}>
           <Icon name="arrow-back" size={24} color="#fff" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.infoButton}>
