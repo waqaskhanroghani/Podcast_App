@@ -1,44 +1,29 @@
 import React, {createContext, useContext, useState, useEffect} from 'react';
-import TrackPlayer, {State} from 'react-native-track-player';
+import TrackPlayer, {useProgress} from 'react-native-track-player';
 
 const AudioContext = createContext();
 
 export const AudioProvider = ({children}) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [position, setPosition] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [currentTrack, setCurrentTrack] = useState(null);
+  const {position, duration} = useProgress();
 
   useEffect(() => {
-    const setupPlayer = async () => {
-      await TrackPlayer.setupPlayer();
-    };
-
-    setupPlayer();
-
-    const updateProgress = setInterval(async () => {
-      const currentPosition = await TrackPlayer.getPosition();
-      const currentDuration = await TrackPlayer.getDuration();
-      setPosition(currentPosition);
-      setDuration(currentDuration);
-    }, 1000); // Update every second
-
-    return () => {
-      clearInterval(updateProgress);
-      TrackPlayer.destroy();
-    };
+    TrackPlayer.setupPlayer();
+    return () => TrackPlayer.destroy();
   }, []);
 
   const playTrack = async track => {
     await TrackPlayer.reset();
     await TrackPlayer.add(track);
+    setCurrentTrack(track);
     await TrackPlayer.play();
     setIsPlaying(true);
   };
 
   const togglePlayback = async () => {
     const currentState = await TrackPlayer.getState();
-
-    if (currentState === State.Playing) {
+    if (currentState === TrackPlayer.STATE_PLAYING) {
       await TrackPlayer.pause();
       setIsPlaying(false);
     } else {
@@ -47,14 +32,34 @@ export const AudioProvider = ({children}) => {
     }
   };
 
+  const stopPlayback = async () => {
+    await TrackPlayer.stop();
+    await TrackPlayer.seekTo(0);
+    setIsPlaying(false);
+  };
+
+  const skipForward = async seconds => {
+    const newPosition = Math.min(position + seconds, duration);
+    await TrackPlayer.seekTo(newPosition);
+  };
+
+  const skipBackward = async seconds => {
+    const newPosition = Math.max(position - seconds, 0);
+    await TrackPlayer.seekTo(newPosition);
+  };
+
   return (
     <AudioContext.Provider
       value={{
         isPlaying,
+        currentTrack,
         position,
         duration,
         playTrack,
         togglePlayback,
+        stopPlayback, // Added stopPlayback method
+        skipForward,
+        skipBackward,
       }}>
       {children}
     </AudioContext.Provider>

@@ -5,7 +5,16 @@ import {useAudio} from '../../context/AudioContext';
 import styles from './styles';
 
 export default function EpisodePlayer({navigation}) {
-  const {isPlaying, position, duration, playTrack, togglePlayback} = useAudio();
+  const {
+    isPlaying,
+    position,
+    duration,
+    playTrack,
+    stopPlayback,
+    togglePlayback,
+    skipForward,
+    skipBackward,
+  } = useAudio();
 
   const formatTime = seconds => {
     const minutes = Math.floor(seconds / 60);
@@ -23,7 +32,8 @@ export default function EpisodePlayer({navigation}) {
         artwork: 'https://picsum.photos/300/200',
       });
     } else {
-      togglePlayback();
+      // togglePlayback();
+      stopPlayback();
     }
   };
 
@@ -43,7 +53,7 @@ export default function EpisodePlayer({navigation}) {
       <Text style={styles.authorName}>By XYZ</Text>
 
       <View style={styles.controls}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => skipBackward(20)}>
           <Icon name="replay-30" size={30} color="#000" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.playButton} onPress={onPlayPress}>
@@ -53,7 +63,7 @@ export default function EpisodePlayer({navigation}) {
             color="#fff"
           />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => skipForward(20)}>
           <Icon name="forward-30" size={30} color="#000" />
         </TouchableOpacity>
       </View>
