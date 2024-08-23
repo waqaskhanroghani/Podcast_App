@@ -7,6 +7,10 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Routes from './src/navigation/Routes';
 
 import Home from './src/screens/home';
+import Login from './src/screens/login';
+import PodcastDetails from './src/screens/podcastDetails';
+import PodcastInformation from './src/components/podcastInformation';
+import EpisodePlayer from './src/components/episodePlayer';
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -14,7 +18,7 @@ export default function App() {
     <SafeAreaView style={{flex: 1}}>
       <NavigationContainer>
         <PaperProvider>
-          <Stack.Navigator>
+          <Stack.Navigator initialRouteName={Routes.LOGIN}>
             <Stack.Screen
               name={Routes.TABNAVIGATOR}
               component={TabNavigation}
@@ -22,13 +26,41 @@ export default function App() {
                 headerShown: false,
               }}
             />
-            {/* <Stack.Screen
-              name={Routes.TASKDETAILS}
-              component={Home}
+
+            {/* LOGIN Screen */}
+            <Stack.Screen
+              name={Routes.LOGIN}
+              component={Login}
               options={{
                 headerShown: false,
               }}
-            /> */}
+            />
+
+            {/* PODCASTDETAILS Screen */}
+            <Stack.Screen
+              name={Routes.PODCASTDETAILS}
+              component={PodcastDetails}
+              options={{
+                headerShown: false,
+              }}
+            />
+
+            {/* PodcastInformation Screen */}
+            <Stack.Screen
+              name={Routes.PODCASTINFORMATION}
+              component={PodcastInformation}
+              options={{
+                headerShown: false,
+              }}
+            />
+            {/* EpisodePlayer Screen */}
+            <Stack.Screen
+              name={Routes.EPISODEPLAYER}
+              component={EpisodePlayer}
+              options={{
+                headerShown: false,
+              }}
+            />
           </Stack.Navigator>
         </PaperProvider>
       </NavigationContainer>
