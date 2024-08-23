@@ -12,11 +12,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {styles} from './styles';
 import {podcastData} from '../../utils/data';
 import Routes from '../../navigation/Routes';
-
 import {useNavigation} from '@react-navigation/native';
+import {useAudio} from '../../context/AudioContext';
 
 const PodcastDetails = () => {
   const navigation = useNavigation();
+  const {isPlaying, currentTrack, togglePlayback} = useAudio();
 
   const renderEpisode = ({item, index}) => (
     <View
@@ -44,6 +45,30 @@ const PodcastDetails = () => {
       </TouchableOpacity>
     </View>
   );
+
+  const renderMiniPlayer = () => {
+    if (!currentTrack) return null;
+
+    return (
+      <TouchableOpacity
+        style={styles.miniPlayer}
+        onPress={() => navigation.navigate(Routes.EPISODEPLAYER)}>
+        <Image
+          // source={{uri: currentTrack.image}}
+          source={{uri: 'https://picsum.photos/275/125'}}
+          style={styles.miniPlayerImage}
+        />
+        <View style={styles.miniPlayerInfo}>
+          <Text style={styles.miniPlayerTitle}>{currentTrack.title}</Text>
+        </View>
+        <TouchableOpacity
+          style={styles.miniPlayerButton}
+          onPress={togglePlayback}>
+          <Icon name={isPlaying ? 'pause' : 'play'} size={24} color="#fff" />
+        </TouchableOpacity>
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -94,6 +119,7 @@ const PodcastDetails = () => {
         keyExtractor={item => item.id}
         contentContainerStyle={styles.episodeList}
       />
+      {renderMiniPlayer()}
     </SafeAreaView>
   );
 };

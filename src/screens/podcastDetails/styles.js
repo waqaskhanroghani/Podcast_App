@@ -116,4 +116,36 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  miniPlayer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 60,
+    backgroundColor: '#5B7083',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+  },
+  miniPlayerImage: {
+    width: 40,
+    height: 40,
+    borderRadius: 4,
+    marginRight: 12,
+  },
+  miniPlayerInfo: {
+    flex: 1,
+  },
+  miniPlayerTitle: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  miniPlayerArtist: {
+    color: '#f0f0f0',
+    fontSize: 12,
+  },
+  miniPlayerButton: {
+    padding: 8,
+  },
 });
