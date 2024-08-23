@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import Colors from '../../config/colors';
+import colors from '../../config/colors';
 
 export const styles = StyleSheet.create({
   container: {
@@ -40,7 +41,7 @@ export const styles = StyleSheet.create({
     color: Colors.textColorPrimary,
   },
   viewMore: {
-    color: Colors.primaryColor,
+    color: '#00478E',
     fontSize: 16,
   },
   podcastCard: {
@@ -51,8 +52,8 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.backgroundColor,
   },
   podcastImage: {
-    width: 180,
-    height: 120,
+    width: 275,
+    height: 125,
   },
   categoryTag: {
     position: 'absolute',
@@ -75,24 +76,23 @@ export const styles = StyleSheet.create({
     marginHorizontal: 8,
     color: Colors.textColorPrimary,
   },
-
   podcastDetails: {
-    flexDirection: 'column', // Keep the column direction
+    flexDirection: 'column',
     marginTop: 4,
     marginBottom: 8,
     marginHorizontal: 8,
   },
   iconTextRow: {
-    flexDirection: 'row', // Align icon and text in a row
-    alignItems: 'center', // Vertically center the icon and text
-    marginBottom: 4, // Space between rows (optional)
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 4,
   },
-
   detailText: {
     fontSize: 12,
     color: Colors.textColorSecondary,
     marginLeft: 4,
     marginRight: 8,
+    fontWeight: '600',
   },
   playlistItem: {
     flexDirection: 'row',
@@ -101,8 +101,8 @@ export const styles = StyleSheet.create({
     marginBottom: 16,
   },
   playlistThumbnail: {
-    width: 60,
-    height: 60,
+    width: 140,
+    height: 105,
     borderRadius: 8,
   },
   playlistItemInfo: {
@@ -115,15 +115,37 @@ export const styles = StyleSheet.create({
     color: Colors.textColorPrimary,
   },
   playlistItemDetails: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    marginTop: 4,
+  },
+  iconTextRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 4,
+    marginBottom: 8,
+  },
+  detailText: {
+    marginLeft: 4,
+    color: '#6B7280',
+    fontSize: 14,
+  },
+  playButtonOverlay: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: [{translateX: -20}, {translateY: -20}],
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: colors.primaryColor, // Semi-transparent background
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   playButton: {
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: Colors.primaryColor, // This is an assumption; you can change it as needed
+    backgroundColor: Colors.primaryColor,
     justifyContent: 'center',
     alignItems: 'center',
   },

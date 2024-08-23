@@ -6,7 +6,7 @@ export const podcastData = {
       episodes: '45 Episodes',
       duration: '1h 20 min',
       category: 'Technology',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '2',
@@ -14,7 +14,7 @@ export const podcastData = {
       episodes: '30 Episodes',
       duration: '1h 15 min',
       category: 'Health',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '3',
@@ -22,7 +22,7 @@ export const podcastData = {
       episodes: '25 Episodes',
       duration: '2h 10 min',
       category: 'History',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '4',
@@ -30,7 +30,7 @@ export const podcastData = {
       episodes: '18 Episodes',
       duration: '50 min',
       category: 'Business',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '5',
@@ -38,7 +38,7 @@ export const podcastData = {
       episodes: '60 Episodes',
       duration: '1h 40 min',
       category: 'Fitness',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '6',
@@ -46,7 +46,7 @@ export const podcastData = {
       episodes: '20 Episodes',
       duration: '1h 5 min',
       category: 'Motivation',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '7',
@@ -54,7 +54,7 @@ export const podcastData = {
       episodes: '55 Episodes',
       duration: '1h 25 min',
       category: 'Technology',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '8',
@@ -62,7 +62,7 @@ export const podcastData = {
       episodes: '40 Episodes',
       duration: '1h 50 min',
       category: 'Travel',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '9',
@@ -70,7 +70,7 @@ export const podcastData = {
       episodes: '32 Episodes',
       duration: '1h 10 min',
       category: 'Cooking',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '10',
@@ -78,7 +78,7 @@ export const podcastData = {
       episodes: '70 Episodes',
       duration: '1h 30 min',
       category: 'Music',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '11',
@@ -86,7 +86,7 @@ export const podcastData = {
       episodes: '15 Episodes',
       duration: '50 min',
       category: 'Meditation',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '12',
@@ -94,7 +94,7 @@ export const podcastData = {
       episodes: '20 Episodes',
       duration: '1h 25 min',
       category: 'Fashion',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '13',
@@ -102,7 +102,7 @@ export const podcastData = {
       episodes: '45 Episodes',
       duration: '2h 10 min',
       category: 'Science',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '14',
@@ -110,7 +110,7 @@ export const podcastData = {
       episodes: '22 Episodes',
       duration: '1h 45 min',
       category: 'Business',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
     {
       id: '15',
@@ -118,7 +118,7 @@ export const podcastData = {
       episodes: '10 Episodes',
       duration: '1h 35 min',
       category: 'Design',
-      image: 'https://picsum.photos/250/150',
+      image: 'https://picsum.photos/275/125',
     },
   ],
   myPlaylist: [

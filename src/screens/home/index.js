@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import {
   View,
@@ -36,10 +35,15 @@ export default function App() {
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {podcastData.allPodcasts.map(podcast => (
               <View key={podcast.id} style={styles.podcastCard}>
-                <Image
-                  source={{uri: podcast.image}}
-                  style={styles.podcastImage}
-                />
+                <View style={styles.thumbnailContainer}>
+                  <Image
+                    source={{uri: podcast.image}}
+                    style={styles.podcastImage}
+                  />
+                  <TouchableOpacity style={styles.playButtonOverlay}>
+                    <Icon name="play" size={24} color="#FFFFFF" />
+                  </TouchableOpacity>
+                </View>
                 <View style={styles.categoryTag}>
                   <Text style={styles.categoryText}>{podcast.category}</Text>
                 </View>
@@ -68,22 +72,29 @@ export default function App() {
           </View>
           {podcastData.myPlaylist.map(podcast => (
             <View key={podcast.id} style={styles.playlistItem}>
-              <Image
-                source={{uri: podcast.thumbnail}}
-                style={styles.playlistThumbnail}
-              />
+              <View style={styles.thumbnailContainer}>
+                <Image
+                  source={{uri: podcast.thumbnail}}
+                  style={styles.playlistThumbnail}
+                />
+                <TouchableOpacity style={styles.playButtonOverlay}>
+                  <Icon name="play" size={24} color="#FFFFFF" />
+                </TouchableOpacity>
+              </View>
               <View style={styles.playlistItemInfo}>
                 <Text style={styles.playlistItemTitle}>{podcast.title}</Text>
+
                 <View style={styles.playlistItemDetails}>
-                  <Icon name="headset-outline" size={16} color="#6B7280" />
-                  <Text style={styles.detailText}>{podcast.episodes}</Text>
-                  <Icon name="time-outline" size={16} color="#6B7280" />
-                  <Text style={styles.detailText}>{podcast.duration}</Text>
+                  <View style={styles.iconTextRow}>
+                    <Icon name="headset-outline" size={16} color="#6B7280" />
+                    <Text style={styles.detailText}>{podcast.episodes}</Text>
+                  </View>
+                  <View style={styles.iconTextRow}>
+                    <Icon name="time-outline" size={16} color="#6B7280" />
+                    <Text style={styles.detailText}>{podcast.duration}</Text>
+                  </View>
                 </View>
               </View>
-              <TouchableOpacity style={styles.playButton}>
-                <Icon name="play" size={24} color="#FFFFFF" />
-              </TouchableOpacity>
             </View>
           ))}
         </View>
