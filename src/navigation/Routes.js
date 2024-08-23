@@ -6,4 +6,5 @@ export default Object.freeze({
   NOTIFICATION: 'notification',
   PROFILE: 'profile',
   PODCASTDETAILS: 'PodcastDetails',
+  PODCASTINFORMATION: 'PodcastInformation',
 });

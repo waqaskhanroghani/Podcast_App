@@ -52,7 +52,9 @@ const PodcastDetails = () => {
           onPress={() => navigation.goBack()}>
           <Icon name="arrow-back" size={24} color="#fff" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.infoButton}>
+        <TouchableOpacity
+          style={styles.infoButton}
+          onPress={() => navigation.navigate(Routes.PODCASTINFORMATION)}>
           <Icon name="information-circle-outline" size={24} color="#fff" />
         </TouchableOpacity>
       </View>
