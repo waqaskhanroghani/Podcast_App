@@ -10,6 +10,7 @@ import Home from './src/screens/home';
 import Login from './src/screens/login';
 import PodcastDetails from './src/screens/podcastDetails';
 import PodcastInformation from './src/components/podcastInformation';
+import EpisodePlayer from './src/components/episodePlayer';
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -48,6 +49,14 @@ export default function App() {
             <Stack.Screen
               name={Routes.PODCASTINFORMATION}
               component={PodcastInformation}
+              options={{
+                headerShown: false,
+              }}
+            />
+            {/* EpisodePlayer Screen */}
+            <Stack.Screen
+              name={Routes.EPISODEPLAYER}
+              component={EpisodePlayer}
               options={{
                 headerShown: false,
               }}

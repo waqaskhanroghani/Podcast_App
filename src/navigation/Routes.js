@@ -7,4 +7,5 @@ export default Object.freeze({
   PROFILE: 'profile',
   PODCASTDETAILS: 'PodcastDetails',
   PODCASTINFORMATION: 'PodcastInformation',
+  EPISODEPLAYER: 'EpisodePlayer',
 });

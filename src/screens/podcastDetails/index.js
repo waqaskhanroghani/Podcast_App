@@ -33,7 +33,9 @@ const PodcastDetails = () => {
           </Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.playButton}>
+      <TouchableOpacity
+        style={styles.playButton}
+        onPress={() => navigation.navigate(Routes.EPISODEPLAYER)}>
         <Icon
           name={index === podcastData.allPodcasts.length - 1 ? 'pause' : 'play'}
           size={24}
