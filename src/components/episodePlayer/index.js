@@ -7,11 +7,13 @@ import styles from './styles';
 export default function EpisodePlayer({navigation}) {
   const {
     isPlaying,
+    isPaused,
     position,
     duration,
     playTrack,
+    pausePlayback,
+    resumePlayback,
     stopPlayback,
-    togglePlayback,
     skipForward,
     skipBackward,
   } = useAudio();
@@ -23,7 +25,7 @@ export default function EpisodePlayer({navigation}) {
   };
 
   const onPlayPress = async () => {
-    if (!isPlaying) {
+    if (!isPlaying && !isPaused) {
       await playTrack({
         id: 'local-track',
         url: require('../../Assets/audio/nix.m4a'),
@@ -31,10 +33,15 @@ export default function EpisodePlayer({navigation}) {
         artist: 'XYZ',
         artwork: 'https://picsum.photos/300/200',
       });
-    } else {
-      // togglePlayback();
-      stopPlayback();
+    } else if (isPlaying) {
+      pausePlayback();
+    } else if (isPaused) {
+      resumePlayback();
     }
+  };
+
+  const onStopPress = () => {
+    stopPlayback();
   };
 
   return (
@@ -66,6 +73,9 @@ export default function EpisodePlayer({navigation}) {
         <TouchableOpacity onPress={() => skipForward(20)}>
           <Icon name="forward-30" size={30} color="#000" />
         </TouchableOpacity>
+        {/* <TouchableOpacity onPress={onStopPress}>
+          <Icon name="stop" size={30} color="#000" />
+        </TouchableOpacity> */}
       </View>
 
       <View style={styles.progressBar}>

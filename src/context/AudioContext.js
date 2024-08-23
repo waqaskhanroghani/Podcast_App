@@ -5,6 +5,7 @@ const AudioContext = createContext();
 
 export const AudioProvider = ({children}) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(null);
   const {position, duration} = useProgress();
 
@@ -19,23 +20,26 @@ export const AudioProvider = ({children}) => {
     setCurrentTrack(track);
     await TrackPlayer.play();
     setIsPlaying(true);
+    setIsPaused(false);
   };
 
-  const togglePlayback = async () => {
-    const currentState = await TrackPlayer.getState();
-    if (currentState === TrackPlayer.STATE_PLAYING) {
-      await TrackPlayer.pause();
-      setIsPlaying(false);
-    } else {
-      await TrackPlayer.play();
-      setIsPlaying(true);
-    }
+  const pausePlayback = async () => {
+    await TrackPlayer.pause();
+    setIsPlaying(false);
+    setIsPaused(true);
+  };
+
+  const resumePlayback = async () => {
+    await TrackPlayer.play();
+    setIsPlaying(true);
+    setIsPaused(false);
   };
 
   const stopPlayback = async () => {
     await TrackPlayer.stop();
     await TrackPlayer.seekTo(0);
     setIsPlaying(false);
+    setIsPaused(false);
   };
 
   const skipForward = async seconds => {
@@ -52,12 +56,14 @@ export const AudioProvider = ({children}) => {
     <AudioContext.Provider
       value={{
         isPlaying,
+        isPaused,
         currentTrack,
         position,
         duration,
         playTrack,
-        togglePlayback,
-        stopPlayback, // Added stopPlayback method
+        pausePlayback,
+        resumePlayback,
+        stopPlayback,
         skipForward,
         skipBackward,
       }}>

@@ -46,7 +46,7 @@ export default StyleSheet.create({
   progressBar: {
     width: '100%',
     height: 4,
-    backgroundColor: '#eee',
+    backgroundColor: '#424343',
     borderRadius: 2,
   },
   progress: {
