@@ -5,6 +5,7 @@ import TabNavigation from './src/navigation/TabNavigation';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Routes from './src/navigation/Routes';
+import TrackPlayer from 'react-native-track-player';
 
 import Home from './src/screens/home';
 import Login from './src/screens/login';

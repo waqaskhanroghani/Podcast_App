@@ -6267,11 +6267,6 @@ react-native-gesture-handler@^2.15.0:
     lodash "^4.17.21"
     prop-types "^15.7.2"
 
-react-native-linear-gradient@^2.8.3:
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.8.3.tgz#9a116649f86d74747304ee13db325e20b21e564f"
-  integrity sha512-KflAXZcEg54PXkLyflaSZQ3PJp4uC4whM7nT/Uot9m0e/qxFV3p6uor1983D1YOBJbJN7rrWdqIjq0T42jOJyA==
-
 react-native-paper@^5.12.3:
   version "5.12.3"
   resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-5.12.3.tgz#d583119722ebbfbb7fe40400181d63748cca3683"
@@ -6317,6 +6312,11 @@ react-native-svg@^15.1.0:
   dependencies:
     css-select "^5.1.0"
     css-tree "^1.1.3"
+
+react-native-track-player@^4.1.1-nightly-9ff32f0f5a7b4f96900bf422810d587f5d2e3789:
+  version "4.1.1-nightly-9ff32f0f5a7b4f96900bf422810d587f5d2e3789"
+  resolved "https://registry.yarnpkg.com/react-native-track-player/-/react-native-track-player-4.1.1-nightly-9ff32f0f5a7b4f96900bf422810d587f5d2e3789.tgz#48c9040520b26586f1c1336f18c87bf7b4b01977"
+  integrity sha512-08qwQr3enAx0fdI5LK3tXg+rWTlldIslTCzozu5WfTNo43TzEBOGRjEuijWKQ3ccuaXOKcm0gmDyIBqC/ATTEg==
 
 react-native-uuid@^2.0.2:
   version "2.0.2"
