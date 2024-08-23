@@ -75,13 +75,19 @@ export const styles = StyleSheet.create({
     marginHorizontal: 8,
     color: Colors.textColorPrimary,
   },
+
   podcastDetails: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: 'column', // Keep the column direction
     marginTop: 4,
     marginBottom: 8,
     marginHorizontal: 8,
   },
+  iconTextRow: {
+    flexDirection: 'row', // Align icon and text in a row
+    alignItems: 'center', // Vertically center the icon and text
+    marginBottom: 4, // Space between rows (optional)
+  },
+
   detailText: {
     fontSize: 12,
     color: Colors.textColorSecondary,

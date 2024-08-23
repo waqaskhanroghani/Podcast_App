@@ -10,6 +10,7 @@ import {
   StatusBar,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import {styles} from './styles';
 import {podcastData} from '../../utils/data';
 
@@ -44,10 +45,14 @@ export default function App() {
                 </View>
                 <Text style={styles.podcastTitle}>{podcast.title}</Text>
                 <View style={styles.podcastDetails}>
-                  <Icon name="headset-outline" size={16} color="#6B7280" />
-                  <Text style={styles.detailText}>{podcast.episodes}</Text>
-                  <Icon name="time-outline" size={16} color="#6B7280" />
-                  <Text style={styles.detailText}>{podcast.duration}</Text>
+                  <View style={styles.iconTextRow}>
+                    <Icon name="headset-outline" size={16} color="#6B7280" />
+                    <Text style={styles.detailText}>{podcast.episodes}</Text>
+                  </View>
+                  <View style={styles.iconTextRow}>
+                    <Icon name="time-outline" size={16} color="#6B7280" />
+                    <Text style={styles.detailText}>{podcast.duration}</Text>
+                  </View>
                 </View>
               </View>
             ))}
