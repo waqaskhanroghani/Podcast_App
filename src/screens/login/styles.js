@@ -48,8 +48,8 @@ export const styles = StyleSheet.create({
   },
   loginButtonText: {
     color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: 18,
+    fontWeight: '800',
   },
   dividerContainer: {
     flexDirection: 'row',
@@ -67,12 +67,12 @@ export const styles = StyleSheet.create({
   },
   socialButtonsContainer: {
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     marginBottom: 20,
   },
   socialButton: {
-    width: 50,
-    height: 50,
+    width: 114,
+    height: 54,
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
@@ -95,8 +95,10 @@ export const styles = StyleSheet.create({
     backgroundColor: '#000000',
   },
   signupText: {
-    textAlign: 'center',
     color: '#000000',
+    fontSize: 18,
+    fontWeight: '600',
+    marginTop: 15,
   },
   signupLink: {
     color: '#00BFFF',
