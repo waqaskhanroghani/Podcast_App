@@ -6,6 +6,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Routes from './src/navigation/Routes';
 import TrackPlayer from 'react-native-track-player';
+import {AudioProvider} from './src/context/AudioContext';
 
 import Home from './src/screens/home';
 import Login from './src/screens/login';
@@ -17,54 +18,56 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <SafeAreaView style={{flex: 1}}>
-      <NavigationContainer>
-        <PaperProvider>
-          <Stack.Navigator initialRouteName={Routes.LOGIN}>
-            <Stack.Screen
-              name={Routes.TABNAVIGATOR}
-              component={TabNavigation}
-              options={{
-                headerShown: false,
-              }}
-            />
+      <AudioProvider>
+        <NavigationContainer>
+          <PaperProvider>
+            <Stack.Navigator initialRouteName={Routes.LOGIN}>
+              <Stack.Screen
+                name={Routes.TABNAVIGATOR}
+                component={TabNavigation}
+                options={{
+                  headerShown: false,
+                }}
+              />
 
-            {/* LOGIN Screen */}
-            <Stack.Screen
-              name={Routes.LOGIN}
-              component={Login}
-              options={{
-                headerShown: false,
-              }}
-            />
+              {/* LOGIN Screen */}
+              <Stack.Screen
+                name={Routes.LOGIN}
+                component={Login}
+                options={{
+                  headerShown: false,
+                }}
+              />
 
-            {/* PODCASTDETAILS Screen */}
-            <Stack.Screen
-              name={Routes.PODCASTDETAILS}
-              component={PodcastDetails}
-              options={{
-                headerShown: false,
-              }}
-            />
+              {/* PODCASTDETAILS Screen */}
+              <Stack.Screen
+                name={Routes.PODCASTDETAILS}
+                component={PodcastDetails}
+                options={{
+                  headerShown: false,
+                }}
+              />
 
-            {/* PodcastInformation Screen */}
-            <Stack.Screen
-              name={Routes.PODCASTINFORMATION}
-              component={PodcastInformation}
-              options={{
-                headerShown: false,
-              }}
-            />
-            {/* EpisodePlayer Screen */}
-            <Stack.Screen
-              name={Routes.EPISODEPLAYER}
-              component={EpisodePlayer}
-              options={{
-                headerShown: false,
-              }}
-            />
-          </Stack.Navigator>
-        </PaperProvider>
-      </NavigationContainer>
+              {/* PodcastInformation Screen */}
+              <Stack.Screen
+                name={Routes.PODCASTINFORMATION}
+                component={PodcastInformation}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              {/* EpisodePlayer Screen */}
+              <Stack.Screen
+                name={Routes.EPISODEPLAYER}
+                component={EpisodePlayer}
+                options={{
+                  headerShown: false,
+                }}
+              />
+            </Stack.Navigator>
+          </PaperProvider>
+        </NavigationContainer>
+      </AudioProvider>
     </SafeAreaView>
   );
 }
