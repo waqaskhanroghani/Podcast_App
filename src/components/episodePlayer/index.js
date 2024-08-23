@@ -13,14 +13,18 @@ export default function EpisodePlayer({navigation}) {
     return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
   };
 
-  const onPlayPress = () => {
-    playTrack({
-      id: 'local-track',
-      url: require('../../Assets/audio/nix.m4a'),
-      title: 'Episode Name Goes here',
-      artist: 'XYZ',
-      artwork: 'https://picsum.photos/300/200',
-    });
+  const onPlayPress = async () => {
+    if (!isPlaying) {
+      await playTrack({
+        id: 'local-track',
+        url: require('../../Assets/audio/nix.m4a'),
+        title: 'Episode Name Goes here',
+        artist: 'XYZ',
+        artwork: 'https://picsum.photos/300/200',
+      });
+    } else {
+      togglePlayback();
+    }
   };
 
   return (
@@ -42,7 +46,7 @@ export default function EpisodePlayer({navigation}) {
         <TouchableOpacity>
           <Icon name="replay-30" size={30} color="#000" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.playButton} onPress={togglePlayback}>
+        <TouchableOpacity style={styles.playButton} onPress={onPlayPress}>
           <Icon
             name={isPlaying ? 'pause' : 'play-arrow'}
             size={40}
