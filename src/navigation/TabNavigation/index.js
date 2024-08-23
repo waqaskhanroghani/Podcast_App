@@ -10,12 +10,14 @@ import Search from '../../screens/search';
 import Notification from '../../screens/notification';
 import Profile from '../../screens/profile';
 import Colors from '../../config/colors';
+import PodcastDetails from '../../screens/podcastDetails';
 
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
     <Tab.Navigator
+      initialRouteName={Routes.PODCASTDETAILS}
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: Colors.primaryColor,
@@ -115,6 +117,17 @@ export default function TabNavigation() {
           },
         }}
       />
+      {/* PodcastDetails screen */}
+      {/* <Tab.Screen
+        name={Routes.PODCASTDETAILS}
+        component={PodcastDetails}
+        options={{
+          tabBarIcon: ({color, size, focused}) => {
+            const iconColor = focused ? '#00ADB5' : '#5B7083';
+            return <FontAwesome5 name="award" size={size} color={iconColor} />;
+          },
+        }}
+      /> */}
     </Tab.Navigator>
   );
 }

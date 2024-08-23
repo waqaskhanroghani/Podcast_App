@@ -8,6 +8,7 @@ import Routes from './src/navigation/Routes';
 
 import Home from './src/screens/home';
 import Login from './src/screens/login';
+import PodcastDetails from './src/screens/podcastDetails';
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -15,7 +16,7 @@ export default function App() {
     <SafeAreaView style={{flex: 1}}>
       <NavigationContainer>
         <PaperProvider>
-          <Stack.Navigator initialRouteName={Routes.LOGIN}>
+          <Stack.Navigator initialRouteName={Routes.PODCASTDETAILS}>
             <Stack.Screen
               name={Routes.TABNAVIGATOR}
               component={TabNavigation}
@@ -26,6 +27,13 @@ export default function App() {
             <Stack.Screen
               name={Routes.LOGIN}
               component={Login}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name={Routes.PODCASTDETAILS}
+              component={PodcastDetails}
               options={{
                 headerShown: false,
               }}
