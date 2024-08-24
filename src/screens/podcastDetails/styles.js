@@ -1,5 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import colors from '../../config/colors';
+
+const {width} = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
@@ -28,32 +30,7 @@ export const styles = StyleSheet.create({
     height: 120,
     borderRadius: 60,
   },
-  podcastName: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#fff',
-    marginTop: 16,
-  },
-  podcastDescription: {
-    fontSize: 16,
-    color: '#fff',
-    textAlign: 'center',
-    marginTop: 8,
-  },
-  subscribeButton: {
-    backgroundColor: colors.primaryColor,
-    width: 210,
-    height: 48,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 16,
-  },
 
-  subscribeButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
   podcastStats: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
@@ -147,5 +124,46 @@ export const styles = StyleSheet.create({
   },
   miniPlayerButton: {
     padding: 8,
+  },
+
+  podcastInfoBackground: {
+    width: width,
+    height: 300,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  overlay: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    padding: 20,
+  },
+  podcastName: {
+    fontSize: 24,
+    color: '#fff',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    // marginBottom: 10,
+    marginTop: 80,
+  },
+  podcastDescription: {
+    fontSize: 16,
+    color: '#fff',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  subscribeButton: {
+    backgroundColor: '#00ADB5',
+    width: 210,
+    height: 48,
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  subscribeButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });

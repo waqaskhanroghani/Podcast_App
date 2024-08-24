@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   Text,
@@ -7,6 +7,7 @@ import {
   FlatList,
   SafeAreaView,
   StatusBar,
+  ImageBackground,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {styles} from './styles';
@@ -14,6 +15,7 @@ import {podcastData} from '../../utils/data';
 import Routes from '../../navigation/Routes';
 import {useNavigation} from '@react-navigation/native';
 import {useAudio} from '../../context/AudioContext';
+import TrackPlayer from 'react-native-track-player';
 
 const PodcastDetails = () => {
   const navigation = useNavigation();
@@ -77,27 +79,30 @@ const PodcastDetails = () => {
         <TouchableOpacity
           style={styles.backButton}
           onPress={() => navigation.goBack()}>
-          <Icon name="arrow-back" size={24} color="#fff" />
+          <Icon name="arrow-back" size={30} color="#fff" />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.infoButton}
           onPress={() => navigation.navigate(Routes.PODCASTINFORMATION)}>
-          <Icon name="information-circle-outline" size={24} color="#fff" />
+          <Icon name="information-circle-outline" size={30} color="#fff" />
         </TouchableOpacity>
       </View>
-      <View style={styles.podcastInfo}>
-        <Image
-          source={{uri: podcastData.allPodcasts[0].image}}
-          style={styles.podcastLogo}
-        />
-        <Text style={styles.podcastName}>Podcast name</Text>
-        <Text style={styles.podcastDescription}>
-          A podcast to know better your greens
-        </Text>
-        <TouchableOpacity style={styles.subscribeButton}>
-          <Text style={styles.subscribeButtonText}>Subscribe</Text>
-        </TouchableOpacity>
-      </View>
+
+      <ImageBackground
+        style={styles.podcastInfoBackground}
+        source={require('../../Assets/images/Pinkfong.png')}
+        resizeMode="cover">
+        <View style={styles.overlay}>
+          <Text style={styles.podcastName}>Podcast name</Text>
+          <Text style={styles.podcastDescription}>
+            A podcast to know better your greens
+          </Text>
+          <TouchableOpacity style={styles.subscribeButton}>
+            <Text style={styles.subscribeButtonText}>Subscribe</Text>
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
+
       <View style={styles.podcastStats}>
         <View style={styles.statItem}>
           <Icon name="thumbs-up-outline" size={20} color="#000" />
