@@ -36,7 +36,9 @@ export default function App({navigation}) {
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {podcastData.allPodcasts.map(podcast => (
               <View key={podcast.id} style={styles.podcastCard}>
-                <View style={styles.thumbnailContainer}>
+                <TouchableOpacity
+                  style={styles.thumbnailContainer}
+                  onPress={() => navigation.navigate(Routes.PODCASTDETAILS)}>
                   <Image
                     source={{uri: podcast.image}}
                     style={styles.podcastImage}
@@ -46,7 +48,7 @@ export default function App({navigation}) {
                     onPress={() => navigation.navigate(Routes.PODCASTDETAILS)}>
                     <Icon name="play" size={24} color="#FFFFFF" />
                   </TouchableOpacity>
-                </View>
+                </TouchableOpacity>
                 <View style={styles.categoryTag}>
                   <Text style={styles.categoryText}>{podcast.category}</Text>
                 </View>
@@ -75,8 +77,11 @@ export default function App({navigation}) {
           </View>
           {podcastData.myPlaylist.map(podcast => (
             <View key={podcast.id} style={styles.playlistItem}>
-              <View style={styles.thumbnailContainer}>
+              <TouchableOpacity
+                style={styles.thumbnailContainer}
+                onPress={() => navigation.navigate(Routes.PODCASTDETAILS)}>
                 <Image
+                  onPress={() => navigation.navigate(Routes.PODCASTDETAILS)}
                   source={{uri: podcast.thumbnail}}
                   style={styles.playlistThumbnail}
                 />
@@ -85,7 +90,7 @@ export default function App({navigation}) {
                   onPress={() => navigation.navigate(Routes.PODCASTDETAILS)}>
                   <Icon name="play" size={24} color="#FFFFFF" />
                 </TouchableOpacity>
-              </View>
+              </TouchableOpacity>
               <View style={styles.playlistItemInfo}>
                 <Text style={styles.playlistItemTitle}>{podcast.title}</Text>
 

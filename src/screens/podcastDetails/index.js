@@ -22,11 +22,12 @@ const PodcastDetails = () => {
   const {isPlaying, currentTrack, togglePlayback} = useAudio();
 
   const renderEpisode = ({item, index}) => (
-    <View
+    <TouchableOpacity
       style={[
         styles.episodeItem,
         index === podcastData.allPodcasts.length - 1 && styles.activeEpisode,
-      ]}>
+      ]}
+      onPress={() => navigation.navigate(Routes.EPISODEPLAYER)}>
       <View style={styles.episodeInfo}>
         <Image source={{uri: item.image}} style={styles.episodeImage} />
         <View>
@@ -45,7 +46,7 @@ const PodcastDetails = () => {
           color="#fff"
         />
       </TouchableOpacity>
-    </View>
+    </TouchableOpacity>
   );
 
   const renderMiniPlayer = () => {
