@@ -22,6 +22,7 @@
     "react-native-safe-area-context": "^4.9.0",
     "react-native-screens": "^3.29.0",
     "react-native-svg": "^15.1.0",
+    "react-native-track-player": "^4.1.1-nightly-9ff32f0f5a7b4f96900bf422810d587f5d2e3789",
     "react-native-uuid": "^2.0.2",
     "react-native-vector-icons": "^10.0.3",
     "uuid": "^9.0.1"
