@@ -12,8 +12,9 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import {styles} from './styles';
 import {podcastData} from '../../utils/data';
+import Routes from '../../navigation/Routes';
 
-export default function Search() {
+export default function Search({navigation}) {
   const [searchQuery, setSearchQuery] = useState('');
 
   // Filter podcasts based on the search query
@@ -22,7 +23,9 @@ export default function Search() {
   );
 
   const renderSearchResult = ({item}) => (
-    <TouchableOpacity style={styles.searchResultItem}>
+    <TouchableOpacity
+      style={styles.searchResultItem}
+      onPress={() => navigation.navigate(Routes.EPISODEPLAYER)}>
       <Image source={{uri: item.image}} style={styles.searchResultThumbnail} />
       <View style={styles.searchResultInfo}>
         <Text style={styles.searchResultTitle}>{item.title}</Text>
