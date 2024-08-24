@@ -1,4 +1,4 @@
-# Podcast Search App
+# Podcast App
 
 This PodcastApp allows users to browse, search, and listen to podcasts. Users can explore podcast details, play episodes, and control playback through a mini player.
 
