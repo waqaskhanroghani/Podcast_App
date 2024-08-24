@@ -1,39 +1,36 @@
 # Podcast Search App
 
-This PodcastApp allows users to browse, search, and listen to podcasts. Users can explore podcast details, play episodes, and control playback through a mini player.
-
-
+This **PodcastApp** allows users to browse, search, and listen to podcasts. Users can explore podcast details, play episodes, and control playback through a mini player.
 
 ## Features
 
 - **Podcast Browsing**: Users can view a list of podcasts and their details.
-- **Search Functionality**: Users can search for podcasts by title.
-- **Podcast Details**: Detailed view of each podcast, including episodes list.
+- **Search Functionality**: Search for podcasts by title.
+- **Podcast Details**: Detailed view of each podcast, including an episode list.
 - **Audio Playback**: Play, pause, and stop podcast episodes.
-- **Mini Player**: A persistent mini player for controlling audio playback across the app.
+- **Mini Player**: Persistent mini player for controlling audio playback across the app.
 - **Episode List**: View a list of episodes for each podcast.
 - **Episode Details**: Detailed view of each episode, including audio playback controls.
 - **Episode Audio Playback**: Play, pause, and stop individual episodes.
 
-
 ## Screenshots
 
-- Login screen =>
-![alt text](<Simulator Screen Shot - IPhone 12 - 2024-08-24 at 11.28.08.png>)
+- **Login Screen**  
+  ![Login Screen](./assets/screenshots/login.png)
 
-- Home screen =>
+- **Home Screen**  
+  ![Home Screen](./assets/screenshots/home.png)
 
-![alt text](<Simulator Screen Shot - IPhone 12 - 2024-08-24 at 11.28.18.png>)
+- **Podcast Details Screen**  
+  ![Podcast Details Screen](./assets/screenshots/details.png)
 
-- Podcast details screen =>
-![alt text](<Simulator Screen Shot - IPhone 12 - 2024-08-24 at 11.28.29.png>)
+- **Podcast Player Screen**  
+  ![Podcast Player Screen](./assets/screenshots/player.png)
 
-- Podcast player screen =>
-![alt text](<Simulator Screen Shot - IPhone 12 - 2024-08-24 at 11.28.37.png>)
+- **Podcast Info Screen**  
+  ![Podcast Info Screen](./assets/screenshots/info.png)
 
-- Podcast Info screen =>
-![alt text](<Simulator Screen Shot - IPhone 12 - 2024-08-24 at 11.28.56.png>)
-
+*(Make sure to replace the image paths with the correct file paths in your project.)*
 
 ## Installation
 
@@ -41,31 +38,35 @@ This PodcastApp allows users to browse, search, and listen to podcasts. Users ca
     ```bash
     git clone https://github.com/waqaskhanroghani/Podcast_App
     ```
+
 2. Navigate to the project directory:
     ```bash
     cd Podcast_App
     ```
+
 3. Install dependencies:
     ```bash
-    yarn 
+    yarn
     ```
+
 4. Run the app:
     ```bash
     yarn android  # For Android
-    yarn ios --simulator='IPhone 12'  # For iOS
+    yarn ios --simulator='iPhone 12'  # For iOS
     ```
 
 ## Project Structure
 
-
+```plaintext
 .
 ├── src/
-│   ├── components/
-│   ├── screens/
+│   ├── components/          # Reusable components
+│   ├── screens/             # Application screens like Home, PodcastDetails, Search
 │   │   ├── Search.js
-│   ├── styles/
+│   ├── styles/              # Global and component-specific styles
 │   ├── utils/
-│   │   ├── data.js    # Contains the podcastData with allPodcasts and myPlaylist arrays
-├── App.js
-├── README.md
-└── package.json
+│   │   ├── data.js          # Contains podcast data arrays (allPodcasts and myPlaylist)
+├── App.js                   # Main app entry point
+├── README.md                # Project documentation
+├── package.json             # Project dependencies and scripts
+└── assets/                  # Contains images and other static assets
