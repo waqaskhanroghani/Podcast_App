@@ -139,9 +139,9 @@ export const styles = StyleSheet.create({
     padding: 20,
   },
   podcastName: {
-    fontSize: 24,
+    fontSize: 30,
     color: '#fff',
-    fontWeight: 'bold',
+    fontWeight: '600',
     textAlign: 'center',
     // marginBottom: 10,
     marginTop: 80,
