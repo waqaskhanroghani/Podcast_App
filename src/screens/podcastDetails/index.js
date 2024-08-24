@@ -56,8 +56,7 @@ const PodcastDetails = () => {
         style={styles.miniPlayer}
         onPress={() => navigation.navigate(Routes.EPISODEPLAYER)}>
         <Image
-          // source={{uri: currentTrack.image}}
-          source={{uri: 'https://picsum.photos/275/125'}}
+          source={{uri: currentTrack.image || 'https://picsum.photos/275/125'}}
           style={styles.miniPlayerImage}
         />
         <View style={styles.miniPlayerInfo}>

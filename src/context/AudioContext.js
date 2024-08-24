@@ -14,9 +14,11 @@ export const AudioProvider = ({children}) => {
   }, []);
 
   const playTrack = async track => {
-    await TrackPlayer.reset();
-    await TrackPlayer.add(track);
-    setCurrentTrack(track);
+    if (!currentTrack || currentTrack.id !== track.id) {
+      await TrackPlayer.reset();
+      await TrackPlayer.add(track);
+      setCurrentTrack(track);
+    }
     await TrackPlayer.play();
     setIsPlaying(true);
   };
@@ -36,6 +38,14 @@ export const AudioProvider = ({children}) => {
     await TrackPlayer.seekTo(0);
     setIsPlaying(false);
     setCurrentTrack(null);
+  };
+
+  const togglePlayback = async () => {
+    if (isPlaying) {
+      await pausePlayback();
+    } else if (currentTrack) {
+      await resumePlayback();
+    }
   };
 
   const skipForward = async seconds => {
@@ -59,6 +69,7 @@ export const AudioProvider = ({children}) => {
         pausePlayback,
         resumePlayback,
         stopPlayback,
+        togglePlayback,
         skipForward,
         skipBackward,
       }}>
